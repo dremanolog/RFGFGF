@@ -1,0 +1,21 @@
+def swap_min_max(matrix):
+    for row in matrix:
+        min_value = min(row)
+        max_value = max(row)
+
+        min_index = row.index(min_value)
+        max_index = row.index(max_value)
+
+        row[0], row[min_index] = row[min_index], row[0]
+        row[-1], row[max_index] = row[max_index], row[-1]
+
+    return matrix
+
+
+# Пример использования
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+
+result = swap_min_max(matrix)
+print(result)
